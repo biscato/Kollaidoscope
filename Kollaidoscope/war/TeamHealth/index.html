@@ -1,0 +1,398 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1 minimum-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link rel="apple-touch-icon" href="assets/icon57x57.jpeg" />
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/icon72x72.jpeg" />
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/icon114x114.jpeg" />
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.2.0.css" />
+    <link rel="stylesheet" type="text/css" href="libs/dist/jquery.jqplot.css" />
+
+    <script type="text/javascript" src="libs/jquery-1.8.3.js" charset="utf-8"></script>
+    <script type="text/javascript" src="libs/jquery.mobile-1.2.0.js" charset="utf-8"></script>
+
+    <script type="text/javascript" src="libs/dist/jquery.jqplot.js" charset="utf-8"></script>
+    <script type="text/javascript" src="libs/jqplot.dateAxisRenderer.js" charset="utf-8"></script>
+    <script type="text/javascript" src="libs/jqplot.pointLabels.js" charset="utf-8"></script>
+    <script type="text/javascript" src="libs/jqplot.categoryAxisRenderer.js" charset="utf-8"></script>
+    <script type="text/javascript" src="libs/jqplot.barRenderer.js" charset="utf-8"></script>
+
+    <script type="text/javascript" src="scripts/central.js" charset="utf-8"></script>
+    <script type="text/javascript" src="scripts/textParser.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+<!-----------------------Start----------------------->
+<div data-role="page" id="start" class="type-interior">
+
+    <div data-role="header">
+        <h1><span id="startTitle"></span></h1>
+    </div>
+
+    <ul data-role="listview">
+        <li><a href="#vote" data-transition="slide">Vote Now!</a></li>
+        <!--<li><a href="#myVotes" data-transition="slide"><span id="myVotesText"></span></a></li>-->
+        <li><a href="#myData" data-transition="slide"><span id="myDataText"></span></a></li>
+        <li><a href="#teamResults" data-transition="slide">Team Results</a></li>
+        <li><a href="#createSurvey" data-transition="slide">Create New Survey</a></li>
+        <li><a href="#manageCurrentSurvey" data-transition="slide">Manage Current Survey</a></li>
+        <li><a href="#manageTeam" data-transition="slide">Manage Team</a></li>
+        <li><a href="#admin" data-transition="slide">Admin</a></li>
+        <li><a href="#testingFunctionality" data-transition="slide">Testing Functionality</a></li>
+        <li><a href="#playground" data-transition="slide">Playground</a></li>
+    </ul>
+
+    <div><p><a href="#about" data-rel="dialog" data-transition="slideup">About this app</a></p></div>
+
+</div>
+
+<!-----------------------Vote!----------------------->
+<div data-role="page" id="vote" class="type-interior">
+
+    <div data-role="header">
+        <a href="#start">Zur&uuml;ck</a>                                    <!--TODO: localize text-->
+        <h1>Vote!</h1>                                                      <!--TODO: localize text-->
+    </div>
+
+    <div data-role="content" id="voting"></div>
+
+    <div data-role="footer" style="text-align: center">
+        <a href="#start">Zur&uuml;ck</a>
+        <button onclick="saveVote()">Save</button>                          <!--TODO: localize text-->
+    </div>
+
+</div>
+
+<!-----------------------my Votes Results----------------------->
+<!--<div data-role="page" id="myVotes">-->
+
+    <!--<div data-role="header" data-position="fixed">-->
+        <!--<a href="#start">Zur&uuml;ck</a>                                    &lt;!&ndash;TODO: localize text&ndash;&gt;-->
+        <!--<h1>My Votes</h1>                                                   &lt;!&ndash;TODO: localize text&ndash;&gt;-->
+    <!--</div>-->
+
+    <!--<div data-role="content">-->
+        <!--<div id="myVotesChart" style="width: 300px; height: 200px;"></div>-->
+    <!--</div>-->
+
+    <!--<div data-role="footer" data-position="fixed">-->
+        <!--<h4>test</h4>-->
+    <!--</div>-->
+
+<!--</div>-->
+
+<!-----------------------my Data----------------------->
+<div data-role="page" id="myData">
+
+    <div data-role="header" data-position="fixed">
+        <a href="#start"><span id="myDataTextBack"></span></a>
+        <h1><span id="myDataTextHeader"></span></h1>
+    </div>
+
+    <div data-role="content">
+        <div data-role="fieldcontain">
+            <label for="firstName">First Name:</label>
+            <input type="text" name="firstName" id="firstName" value=""  />
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" id="lastName" value=""  />
+            <label for="email">Email Address:</label>
+            <input type="text" name="email" id="email" value=""  />
+            <label for="role">Role:</label>
+            <input type="text" name="role" id="role" value=""  />
+            <label for="company">Company:</label>
+            <input type="text" name="company" id="company" value=""  />
+        </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <h4><span id="myDataTextFooter"></span></h4>
+    </div>
+
+</div>
+
+<!-----------------------Team Results----------------------->
+<div data-role="page" id="teamResults" class="type-interior">
+
+    <div data-role="header">
+        <a href="#start">Zur&uuml;ck</a>                                    <!--TODO: localize text-->
+        <h1>Results</h1>                                                    <!--TODO: localize text-->
+    </div>
+
+    <div data-role="content">
+        <div id="teamResultsChart" style="width: 100%; height: 100%;"></div>
+        <div data-role="fieldcontain">
+            <select name="teamResultsTimeframe" id="teamResultsTimeframe">
+                <option value="standard">Last vote</option>
+                <option value="1week">Last week</option>
+                <option value="2week">Last 2 weeks</option>
+                <option value="3week">Last 3 weeks</option>
+                <option value="4week">Last 4 weeks</option>
+                <option value="half">Last half year</option>
+                <option value="full">Last year</option>
+                <option value="all">All votes</option>
+            </select>
+        </div>
+    </div>
+
+
+</div>
+
+<!-----------------------Create Survey Page----------------------->
+<div data-role="page" id="createSurvey">
+
+    <div data-role="header">
+        <a href="#start">Zur&uuml;ck</a>                                    <!--TODO: localize text-->
+        <h1>Create New Survey</h1>                                          <!--TODO: localize text-->
+    </div>
+
+    <div data-role="content">
+
+        <div data-role="fieldcontain">
+            <label for="fromDate">Start Date of Survey:</label>                             <!--TODO: localize text-->
+            <input type="date" name="fromDate" id="fromDate" value="" data-clear-btn="true" />
+        </div>
+        <div data-role="fieldcontain">
+            <label for="surveyDuration">Duration</label>                                 <!--TODO: localize text-->
+            <select name="surveyDuration" id="surveyDuration">
+                <option value="1week">1 week</option>
+                <option value="2week">2 weeks</option>
+                <option value="3week">3 weeks</option>
+                <option value="4week">4 weeks</option>
+                <option value="5week">5 week</option>
+                <option value="6week">6 weeks</option>
+                <option value="7week">7 weeks</option>
+                <option value="8week">8 weeks</option>
+            </select>
+        </div>
+
+        <div data-role="fieldcontain">
+            <label for="emailOfInvitee" data-inline="true">Enter email address:</label>
+            <input id="emailOfInvitee" type="text" data-inline="true"/>
+            <!--<label for="addParticipantButton" data-inline="true" >Add participant to survey:</label>-->
+            <div><button id="addParticipantButton"  onclick="addParticipantToInvitationByEmail(emailOfInvitee)">Add to invitation list</button></div>
+        </div>
+
+        <div data-role="fieldcontain">
+
+            <fieldset data-role="controlgroup">
+
+                <legend>Participants of Survey:</legend>                       <!--TODO: localize text-->
+                <!--<input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom" />-->
+                <!--<label for="checkbox-1">Su</label>-->
+                <!--<input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom" />-->
+                <!--<label for="checkbox-2">Florian</label>-->
+                <!--<input type="checkbox" name="checkbox-3" id="checkbox-3" class="custom" />-->
+                <!--<label for="checkbox-3">Jan</label>-->
+                <div id="participantsToInvite"></div>
+            </fieldset>
+
+        </div>
+        <button onclick="createNewSurvey()">Create Survey</button>            <!--TODO: localize text-->
+
+    </div>
+
+
+    <div data-role="footer" data-position="fixed">
+        <h4>Create New Survey</h4>                                          <!--TODO: localize text-->
+    </div>
+</div>
+
+<!-----------------------Manage Current Survey Page----------------------->
+<div data-role="page" id="manageCurrentSurvey">
+
+    <div data-role="header">
+        <a href="#start">Zur&uuml;ck</a>                                    <!--TODO: localize text-->
+        <h1>Manage Current Survey</h1>                                      <!--TODO: localize text-->
+    </div>
+
+    <div data-role="content">
+
+
+    </div>
+
+
+    <div data-role="footer" data-position="fixed">
+        <h4>Manage Current Survey</h4>                                      <!--TODO: localize text-->
+    </div>
+</div>
+
+<!-----------------------Manage Team Page----------------------->
+<div data-role="page" id="manageTeam">
+
+    <div data-role="hweader">
+        <a href="#start">Zur&uuml;ck</a>                                    <!--TODO: localize text-->
+        <h1>Manage Team</h1>                                                <!--TODO: localize text-->
+    </div>
+
+    <div data-role="content">
+
+        <div data-role="fieldcontain">
+            <!--<label for="firstName">First Name:</label>-->
+            <!--<input type="text" name="name" id="firstName" value=""  />-->
+            <!--<label for="lastName">Last Name:</label>-->
+            <!--<input type="text" name="name" id="lastName" value=""  />-->
+            <!--<label for="email">Email Address:</label>-->
+            <!--<input type="text" name="name" id="email" value=""  />-->
+            <!--<label for="role">Role:</label>-->
+            <!--<input type="text" name="name" id="role" value=""  />-->
+            <!--<label for="company">Company:</label>-->
+            <!--<input type="text" name="name" id="company" value=""  />-->
+        </div>
+
+        <!--TODO: display current team members -->
+        <!--TODO: display tentative team members -->
+        <!--TODO: invite new team members -->
+        <!--TODO: remove team members -->
+
+        <button onclick="saveChanges">Save Team Changes</button>              <!--TODO: localize text-->
+
+    </div>
+
+
+    <div data-role="footer" data-position="fixed">
+        <h4>Create New Survey</h4>                                          <!--TODO: localize text-->
+    </div>
+</div>
+
+<!-----------------------Admin Page----------------------->
+<div data-role="page" id="admin">
+
+    <div data-role="header">
+        <a href="#start">Zur&uuml;ck</a>                                    <!--TODO: localize text-->
+        <h1>Admin Page</h1>                                            <!--TODO: localize text-->
+    </div>
+
+    <div data-role="content">
+
+        <!--TODO: create user-->
+        <!--TODO: Assign license to user-->
+        <!--TODO: create new team with team lead-->
+        <!--TODO: set team to inactive-->
+        <!--TODO: delete team-->
+
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+        <h4>Admin Page</h4>
+    </div>
+</div>
+
+<!-----------------------Test Page----------------------->
+<div data-role="page" id="testingFunctionality">
+
+    <div data-role="header">
+        <a href="#start">Zur&uuml;ck</a>    <!--TODO: Home statt back!!!!-->                                <!--TODO: localize text-->
+        <h1>Testing Page</h1>                                            <!--TODO: localize text-->
+    </div>
+
+    <div data-role="content">
+        <label>Questions</label>
+        <button onclick="createAllQuestions()">Create Questions</button>
+        <button onclick="deleteAllQuestions()">Delete All Questions</button>
+        <label>Answers</label>
+        <button onclick="createTestAnswersServer()">Create Test Answers</button>
+        <!--<button onclick="createTestAnswers()">Create Test Answers</button>-->
+        <button onclick="deleteAllAnswers()">Delete All Answers</button>
+        <label>Teams with Users</label>
+        <button onclick="createTeamWithUsers()">Create one Team with Users</button>
+        <button onclick="deleteTeamsAndUsers()">Delete all Teams and Users</button>
+        <!--         <button onclick="deleteAllTestAnswers">Delete All Test Answers</button> --> <!-- TODO: implement that only test answers are deleted -->
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <h4>Testing Page</h4>
+    </div>
+</div>
+
+<!-----------------------Playground----------------------->
+<div data-role="page" id="playground">
+
+    <div data-role="header">
+        <a href="#start">Zur&uuml;ck</a>
+        <h1>Home</h1>
+    </div>
+
+    <div data-role="content">
+
+        <!-----------------------Slider element----------------------->
+
+        <div data-role="fieldcontain">
+            <label for="slider-1">Input slider:</label>
+            <input type="range" name="slider" id="slider-1" value="0" min="0" max="100"  />
+        </div>
+        <div data-role='fieldcontain' >
+            <input data-highlight="true" type='range' name='slider-2' id='slider-2' value='5' min='0' max='10' />
+            <label for='slider-2'>2nd slider</label>
+        </div>
+
+        <!-----------------------Collapsable element----------------------->
+        <div data-role="collapsible" data-state="collapsed">
+            <h3>Collapsable</h3>
+            <p>This app rocks!</p>
+        </div>
+
+
+        <!-----------------------A Form element----------------------->
+        <form action="#" method="get">
+
+            <div data-role="fieldcontain">
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" id="name" value=""  />
+            </div>
+
+            <div data-role="controlgroup">
+                <legend>Which flavour(s) would you like?</legend>
+
+                <input type="checkbox" name="vanilla" id="vanilla" class="custom" />
+                <label for="vanilla">Vanilla</label>
+
+                <input type="checkbox" name="chocolate" id="chocolate" class="custom" />
+                <label for="chocolate">Chocolate</label>
+
+                <input type="checkbox" name="strawberry" id="strawberry" class="custom" />
+                <label for="strawberry">Strawberry</label>
+
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="quantity">Number of Cones:</label>
+                <input type="range" name="quantity" id="quantity" value="1" min="1" max="10"  />
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="sprinkles">Sprinkles:</label>
+                <select name="sprinkles" id="sprinkles" data-role="slider">
+                    <option value="off">No</option>
+                    <option value="on">Yes</option>
+                </select>
+            </div>
+
+            <div data-role="fieldcontain">
+                <label for="store">Collect from Store:</label>
+                <select name="store" id="store">
+                    <option value="mainStreet">Main Street</option>
+                    <option value="libertyAvenue">Liberty Avenue</option>
+                    <option value="circleSquare">Circle Square</option>
+                    <option value="angelRoad">Angel Road</option>
+                </select>
+            </div>
+
+            <div class="ui-body ui-body-b">
+                <fieldset class="ui-grid-a">
+                    <div class="ui-block-a"><button type="submit" data-theme="d">Cancel</button></div>
+                    <div class="ui-block-b"><button type="submit" data-theme="a">Order Ice Cream</button></div>
+                </fieldset>
+            </div>
+
+    </div>
+</div>
+
+</body>
+
+</html>

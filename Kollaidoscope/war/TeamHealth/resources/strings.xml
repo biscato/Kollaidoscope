@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<texts>
+    <back>
+        <de>Zurück</de>
+        <en>Back</en>
+    </back>
+    <myVotes>
+        <de>Vergangene Abstimmungen</de>
+        <en>My Votes</en>
+    </myVotes>
+    <myData>
+        <de>Meine Daten</de>
+        <en>My Data</en>
+    </myData>
+    <startTitle>
+        <de>Hauptmenü</de>
+        <en>Home</en>
+    </startTitle>
+</texts>
