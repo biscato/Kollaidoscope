@@ -24,7 +24,11 @@
   		<servlet-name>SystemServiceServlet</servlet-name>
   		<url-pattern>/_ah/spi/*</url-pattern>
  	</servlet-mapping>
- 
+ 	
+ <init-param>
+    <param-name>com.sun.jersey.config.feature.DisableWADL</param-name>
+    <param-value>true</param-value>
+</init-param>
  
   	<servlet>
    		<servlet-name>RESTService</servlet-name>
