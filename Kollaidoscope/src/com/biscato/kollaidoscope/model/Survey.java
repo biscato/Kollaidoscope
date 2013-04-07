@@ -19,6 +19,7 @@ public class Survey {
 	
 	public Survey(){
 		super();
+		this.active = true;
 	}
 	
 	@XmlElement // why an annotation only for Id? why not for other attribute?

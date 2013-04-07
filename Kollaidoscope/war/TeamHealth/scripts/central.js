@@ -546,13 +546,17 @@ function createNewSurvey(){
 }
 
 function getSurveyDataInJSONFormat(){
+
+    var startDate = $('#fromDate').val;
+    var endDate = getEndDateForSurvey();
+
     var jsonSurveyData = {
         survey: []
     };
 
-    jsonQuestions.survey.push({
-        "startTimestamp" : questionCatalogue[i].language,
-        "endTimestamp" : questionCatalogue[i].description,
+    jsonSurveyData.survey.push({
+        "startTimestamp" : startDate,
+        "endTimestamp" : endDate,
         "participant" : biscatoDataParticipantsToInvite,
         "teamLead" : questionCatalogue[i].categoryId
     });
