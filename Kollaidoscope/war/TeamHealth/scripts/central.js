@@ -104,7 +104,7 @@ function getVotesFromUser(){
         answers[i]["questionText"] = biscatoDataQuestions[i].description;
         answers[i]["questionCategory"] = biscatoDataQuestions[i].category;
         answers[i]["questionCategoryId"] = biscatoDataQuestions[i].categoryId;
-        answers[i]["user"] = "janruessel@gmail.com";
+        answers[i]["user"] = $("#voterName").val();
         answers[i]["rating"] = document.getElementById(sliderString).value;
 
     }
