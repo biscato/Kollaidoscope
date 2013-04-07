@@ -19,5 +19,6 @@
 	<classpathentry kind="lib" path="/Users/d044134/ZJan/Private/biscato/Projects/git/Kollaidoscope/Kollaidoscope/war/WEB-INF/lib/jersey-spring-1.15.jar"/>
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/d044134/ZJan/Private/biscato/Projects/git/Kollaidoscope/Kollaidoscope/war/WEB-INF/lib/asm-3.1.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
