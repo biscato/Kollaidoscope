@@ -20,6 +20,10 @@
         <de>Jetzt Abstimmen</de>
         <en>Vote Now</en>
     </voteNow>
+    <voteTitle>
+        <de>Abstimmen</de>
+        <en>Vote</en>
+    </voteTitle>    
     <results>
         <de>Ergebnis der Abstimmung</de>
         <en>Results</en>

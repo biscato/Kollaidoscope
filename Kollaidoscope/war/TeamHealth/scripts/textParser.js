@@ -16,6 +16,11 @@ function fillUITextsForStartPage(){
     $("#myDataTextFooter").html(getText("myData"));
     $("#voteNow").html(getText("voteNow"));
     $("#results").html(getText("results"));
+
+    $("#voteHeaderBack").html(getText("back"));
+    $("#voteHeaderTitle").html(getText("voteTitle"));
+
+    
     //TODO: add all other UI elements
 }
 
