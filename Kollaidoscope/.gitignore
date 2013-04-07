@@ -12,7 +12,6 @@ bin
 #################
 
 *.pydevproject
-.project
 tmp/
 *.tmp
 *.bak
