@@ -16,4 +16,12 @@
         <de>Hauptmenü</de>
         <en>Home</en>
     </startTitle>
+    <voteNow>
+        <de>Jetzt Abstimmen</de>
+        <en>Vote Now</en>
+    </voteNow>
+    <results>
+        <de>Ergebnis der Abstimmung</de>
+        <en>Results</en>
+    </results>
 </texts>

@@ -14,6 +14,8 @@ function fillUITextsForStartPage(){
     $("#myDataTextBack").html(getText("back"));
     $("#myDataTextHeader").html(getText("myData"));
     $("#myDataTextFooter").html(getText("myData"));
+    $("#voteNow").html(getText("voteNow"));
+    $("#results").html(getText("results"));
     //TODO: add all other UI elements
 }
 
@@ -36,7 +38,13 @@ function loadTextsXML(){
 function parseTexts(){
 
     biscatoTexts = new Array();
-    var lang = "en";
+    var lang = window.navigator.userLanguage || window.navigator.language;
+    if(lang.indexOf("de") !== -1){
+        lang = "de";
+    }
+    else {
+        lang = "en";
+    }
 
     for(var i in biscatoXmlDoc.documentElement.childNodes){
         if(biscatoXmlDoc.documentElement.childNodes[i].nodeName != "#text" && biscatoXmlDoc.documentElement.childNodes[i].nodeName != undefined){
