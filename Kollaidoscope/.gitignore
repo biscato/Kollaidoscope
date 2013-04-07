@@ -6,6 +6,7 @@
 bin
 # Mac crap
 .DS_Store
+.classpath
 
 #################
 ## Eclipse
