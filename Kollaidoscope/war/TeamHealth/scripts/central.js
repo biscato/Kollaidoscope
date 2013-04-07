@@ -470,9 +470,6 @@ function displayTeamMembersAsParticipantsToInvite(){
 //    html += "</ul><button>remove</button></div>";
 //    $("#participantsToInvite").append(html).trigger('create');
 //}
-function createNewSurvey(){
-    alert("create new survey")
-}
 
 function removeParticipantFromInvitation(){
     //remove from list UI
@@ -527,7 +524,7 @@ function setDefaultStartDate(){
     $('#fromDate').val(new Date().toJSON().substring(0,10));
 }
 
-function createSurvey(){
+function createNewSurvey(){
     var biscatoSurveyURL = getBiscatoSurveyURL();
     var surveyData = getSurveyDataInJSONFormat();
     $.ajax(
