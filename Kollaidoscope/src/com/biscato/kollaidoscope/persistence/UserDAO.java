@@ -7,7 +7,6 @@ import java.util.List;
 import javax.jdo.PersistenceManager;
 import javax.jdo.Query;
 
-import com.biscato.kollaidoscope.model.Question;
 import com.biscato.kollaidoscope.model.User;
 
 public class UserDAO implements EntityDAO<User> {
