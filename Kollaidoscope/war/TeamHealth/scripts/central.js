@@ -310,11 +310,11 @@ function displayTeamResults(data){
         // is specified for each series.
         series:[
             {label:'Vision'},
-            {label:'Innovation'},
-            {label:'Task Orientation'},
-            {label:'Security'},
-            {label:'Structural Approach'},
-            {label:'Virtual Competence'}
+            {label:'Unterstützung und Innovationsbereitschaft'},
+            {label:'Aufgabenorientierung'},
+            {label:'Partizipation'},
+            {label:'Struktur'},
+            {label:'Virtuelle Kompetenz'}
         ],
         // Show the legend and put it outside the grid, but inside the
         // plot container, shrinking the grid to accomodate the legend.
