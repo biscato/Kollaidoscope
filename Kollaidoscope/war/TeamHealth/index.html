@@ -41,15 +41,15 @@
         <!--<li><a href="#myVotes" data-transition="slide"><span id="myVotesText"></span></a></li>-->
         <li><a href="#teamResults" data-transition="slide"><span id="results"></span></a></li>
         <!--<li><a href="#myData" data-transition="slide"><span id="myDataText"></span></a></li>-->
-        <!--<li><a href="#createSurvey" data-transition="slide">Create New Survey</a></li>-->
-        <!--<li><a href="#manageCurrentSurvey" data-transition="slide">Manage Current Survey</a></li>-->
-        <!--<li><a href="#manageTeam" data-transition="slide">Manage Team</a></li>-->
-        <!--<li><a href="#admin" data-transition="slide">Admin</a></li>-->
-        <!--<li><a href="#testingFunctionality" data-transition="slide">Testing Functionality</a></li>-->
-        <!--<li><a href="#playground" data-transition="slide">Playground</a></li>-->
+        <!--<li><a href="#createSurvey" data-transition="slide"><span id="startListCreate"></span></a></li>-->
+        <!--<li><a href="#manageCurrentSurvey" data-transition="slide"><span id="startListManageSurvey"></a></li>-->
+        <!--<li><a href="#manageTeam" data-transition="slide"><span id="startListManageTeam"></a></li>-->
+        <!--<li><a href="#admin" data-transition="slide"><span id="startListAdmin"></a></li>-->
+        <!--<li><a href="#testingFunctionality" data-transition="slide"><span id="startListTesting"></a></li>-->
+        <!--<li><a href="#playground" data-transition="slide"><span id="startListPlayground"></a></li>-->
     </ul>
 
-    <!--<div><p><a href="#about" data-rel="dialog" data-transition="slideup">About this app</a></p></div>-->
+    <!--<div><p><a href="#about" data-rel="dialog" data-transition="slideup"><span id="startListAbout"></a></p></div>-->
 
 </div>
 
@@ -69,8 +69,8 @@
     </div>
 
     <div data-role="footer" style="text-align: center">
-        <a href="#start">Zur&uuml;ck</a>
-        <button onclick="saveVote()">Save</button>                          <!--TODO: localize text-->
+        <a href="#start"><span id="voteFooterBack"></a>
+        <button onclick="saveVote()"><span id="voteFooterSave"></button>
     </div>
 
 </div>
@@ -126,22 +126,22 @@
 <div data-role="page" id="teamResults" class="type-interior">
 
     <div data-role="header">
-        <a href="#start">Zur&uuml;ck</a>                                    <!--TODO: localize text-->
-        <h1>Results</h1>                                                    <!--TODO: localize text-->
+        <a href="#start"><span id="teamresultsHeaderBack"></a>                                    <!--TODO: localize text-->
+        <h1><span id="teamresultsHeaderTitle"></h1>                                                    <!--TODO: localize text-->
     </div>
 
     <div data-role="content">
         <div id="teamResultsChart" style="width: 100%; height: 100%;"></div>
         <div data-role="fieldcontain">
             <select name="teamResultsTimeframe" id="teamResultsTimeframe">
-                <option value="standard">Last vote</option>
-                <option value="1week">Last week</option>
-                <option value="2week">Last 2 weeks</option>
-                <option value="3week">Last 3 weeks</option>
-                <option value="4week">Last 4 weeks</option>
-                <option value="half">Last half year</option>
-                <option value="full">Last year</option>
-                <option value="all">All votes</option>
+                <option value="standard">Letzte Umfrage</option>
+                <option value="1week">Ergebnisse der letzten Woche</option>
+                <option value="2week">Ergebnisse der letzten Wochen</option>
+                <option value="3week">Ergebnisse der letzten Wochen</option>
+                <option value="4week">Ergebnisse der letzten Wochen</option>
+                <option value="half">Ergebnisse vom letzten halben Jahr</option>
+                <option value="full">Ergebnisse vom letzten Jahr</option>
+                <option value="all">Alle Ergebnisse zusammen</option>
             </select>
         </div>
     </div>
@@ -170,7 +170,7 @@
                 <option value="2week">2 weeks</option>
                 <option value="3week">3 weeks</option>
                 <option value="4week">4 weeks</option>
-                <option value="5week">5 week</option>
+                <option value="5week">5 weeks</option>
                 <option value="6week">6 weeks</option>
                 <option value="7week">7 weeks</option>
                 <option value="8week">8 weeks</option>

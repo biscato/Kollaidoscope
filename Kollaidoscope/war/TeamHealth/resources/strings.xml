@@ -28,4 +28,76 @@
         <de>Ergebnis der Abstimmung</de>
         <en>Results</en>
     </results>
+    <newSurvey>
+        <de>Neue Umfrage erstellen</de>
+        <en>Create New Survey</en>
+    </newSurvey>
+    <manageSurvey>
+        <de>Aktuelle Umfrage administrieren</de>
+        <en>Manage Current Survey</en>
+    </manageSurvey>
+    <manageTeam>
+        <de>Team administrieren</de>
+        <en>Manage Team</en>
+    </manageTeam>
+    <adminSection>
+        <de>Admin-Bereich</de>
+        <en>Admin</en>
+    </adminSection>
+    <testingFunctionality>
+        <de>Testbereich</de>
+        <en>Testing Functionality</en>
+    </testingFunctionality>
+    <playgroundSection>
+        <de>Spielwiese</de>
+        <en>Playground</en>
+    </playgroundSection>
+    <aboutApp>
+        <de>Infos zur App</de>
+        <en>About this app</en>
+    </aboutApp>
+    <save>
+        <de>Sichern</de>
+        <en>Save</en>
+    </save>
+    <results>
+        <de>Letzte Abstimmung</de>
+        <en>Last vote</en>
+    </results>
+    <results>
+        <de>Letzte Woche</de>
+        <en>Last week</en>
+    </results>
+    <results>
+        <de>Letzte 2 Wochen</de>
+        <en>Last 2 weeks</en>
+    </results>
+    <results>
+        <de>Letzte 3 Wochen</de>
+        <en>Last 3 weeks</en>
+    </results>
+    <results>
+        <de>Letzte 4 Wochen</de>
+        <en>Last 4 weeks</en>
+    </results>
+    <results>
+        <de>Letztes halbe Jahr</de>
+        <en>Last half year</en>
+    </results>
+    <results>
+        <de>Letztes Jahr</de>
+        <en>Last year</en>
+    </results>
+    <results>
+        <de>Alle Abstimmungen</de>
+        <en>All votes</en>
+    </results>
+    <results>
+        <de>Ergebnis</de>
+        <en>Testing</en>
+    </results>
+    <results>
+        <de>Ergebnis</de>
+        <en>Testing</en>
+    </results>
 </texts>

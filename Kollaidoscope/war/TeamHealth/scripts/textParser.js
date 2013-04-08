@@ -16,10 +16,27 @@ function fillUITextsForStartPage(){
     $("#myDataTextFooter").html(getText("myData"));
     $("#voteNow").html(getText("voteNow"));
     $("#results").html(getText("results"));
-
+    $("#startListCreate").html(getText("newSurvey"));
+    $("#startListManageSurvey").html(getText("manageSurvey"));
+    $("#startListManageTeam").html(getText("manageTeam"));
+    $("#startListAdmin").html(getText("adminSection"));
+    $("#startListTesting").html(getText("testingFunctionality"));
+    $("#startListPlayground").html(getText("playgroundSection"));
+    $("#startListAbout").html(getText("aboutApp"));
+    $("#voteFooterBack").html(getText("back"));
+    $("#voteFooterSave").html(getText("save"));
     $("#voteHeaderBack").html(getText("back"));
     $("#voteHeaderTitle").html(getText("voteTitle"));
-
+    $("#teamresultsHeaderBack").html(getText("back"));
+    $("#teamresultsHeaderTitle").html(getText("results"));
+    $("#teamresultsContentLastVote").html(getText("results"));
+    $("#teamresultsContentLastWeek").html(getText("results"));
+    $("#teamresultsContentLast2Weeks").html(getText("results"));
+    $("#teamresultsContentLast3Weeks").html(getText("results"));
+    $("#teamresultsContentLast4Weeks").html(getText("results"));
+    $("#teamresultsContentLastHalf").html(getText("results"));
+    $("#teamresultsContentLastYear").html(getText("results"));
+    $("#teamresultsContentAll").html(getText("results"));
     
     //TODO: add all other UI elements
 }
