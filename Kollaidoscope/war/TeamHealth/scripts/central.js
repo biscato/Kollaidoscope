@@ -296,7 +296,7 @@ function displayTeamResults(data){
     var structure5 	= [parseFloat(data.structure)];
     var virtual6 	= [parseFloat(data.virtualCompetence)];
 
-    var ticks = ["Last Survey"];
+    var ticks = ["Umfrageergebnis"];
     
     $.jqplot('teamResultsChart', [vision1, innovation2, task3, security4, structure5, virtual6], {
         // The "seriesDefaults" option is an options object that will
