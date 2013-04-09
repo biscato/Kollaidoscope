@@ -12,7 +12,7 @@ import com.google.appengine.api.datastore.Key;
 
 @XmlRootElement
 @PersistenceCapable
-public class Question {
+public class Question{
 	
 	@PrimaryKey //Annotation for jersey
 	@Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -22,6 +22,7 @@ public class Question {
 	private String category;
 	private boolean active;
 	private int categoryId;
+	private int rank;
 	
 	public Question(){
 		super();
@@ -34,13 +35,22 @@ public class Question {
 		this.active = true;
 	}	
 	
-	public Question(String language, String description, String category, int categoryId) {
+	public Question(String language, String description, String category, int categoryId, int rank) {
 		super();
 		this.language = language;
 		this.questionText = description;
 		this.category = category;
 		this.categoryId = categoryId;
 		this.active = true;
+		this.rank = rank;
+	}
+	
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
 	}
 	public String getLanguage() {
 		return language;

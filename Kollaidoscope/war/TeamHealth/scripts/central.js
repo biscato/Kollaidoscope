@@ -57,11 +57,11 @@ function displayAllQuestions(targetDOMElement){
 
     for(var i=0; i < biscatoDataQuestions.length; i++){
         questionsCounter++;
-        html += "<div>"+questionsCounter+ ") "; //TODO: localize text
-        html += "<label>" + biscatoDataQuestions[i].description + "</label></div>"; //TODO: localize text
+        html += "<div>"+questionsCounter+ ") ";
+        html += "<label>" + biscatoDataQuestions[i].description + "</label></div>";
         html += "<div data-role='fieldcontain'>";
         html += "<input type='range' name='slider-" + i + "' id='slider-" + i + "' value='" + sliderStartValue + "' min='" + sliderMinValue + "' max='" + sliderMaxValue + "' />";
-        html += "<label for='slider-" + i + "'></label>"; //TODO: localize text
+        html += "<label for='slider-" + i + "'></label>";
         html += "</div>";
         html += "<br>";
     }
@@ -673,12 +673,12 @@ function getTestQuestionsInJSONFormat(){
 		};
 	
     for(var i in questionCatalogue){
-    	var question = questionCatalogue[i];
     	jsonQuestions.question.push({
     		"language" : questionCatalogue[i].language,
     		"description" : questionCatalogue[i].description,
     		"category" : questionCatalogue[i].category,
-    		"categoryId" : questionCatalogue[i].categoryId
+    		"categoryId" : questionCatalogue[i].categoryId,
+            "rank" : questionCatalogue[i].rank
         });
     }
 
@@ -710,145 +710,169 @@ function createQuestions(){
 	questions[0]["language"] = langDe;
 	questions[0]["description"] = "In diesem Team ist allen klar, was wir erreichen wollen.";
 	questions[0]["category"] = categoryVisionDe;
-	questions[0]["categoryId"] = categoryVisionId;
+    questions[0]["categoryId"] = categoryVisionId;
+    questions[0]["rank"] = 1;
 
 	questions[1] = new Array();
 	questions[1]["language"] = langDe;
 	questions[1]["description"] = "Wir wissen, dass wir uns aufeinander verlassen können.";
 	questions[1]["category"] = categoryInnovationDe;
 	questions[1]["categoryId"] = categoryInnovationId;
+    questions[1]["rank"] = 2;
 
 	questions[2] = new Array();
 	questions[2]["language"] = langDe;
 	questions[2]["description"] = "Wir haben anregende Diskussionen darüber, wie wir am besten arbeiten.";
 	questions[2]["category"] = categoryTaskorientationDe;
 	questions[2]["categoryId"] = categoryTaskorientationId;
+    questions[2]["rank"] = 3;
 
-	questions[3] = new Array();
+    questions[3] = new Array();
 	questions[3]["language"] = langDe;
 	questions[3]["description"] = "Wir treffen uns ausreichend häufig, um effektiv zu kommunizieren und zu koordinieren.";
 	questions[3]["category"] = categorySecurityDe;
 	questions[3]["categoryId"] = categorySecurityId;
+    questions[3]["rank"] = 4;
 
 	questions[4] = new Array();
 	questions[4]["language"] = langDe;
 	questions[4]["description"] = "Die Teammitglieder bieten einander immer schnell Hilfe an, um etwas Neues auszuprobieren.";
 	questions[4]["category"] = categoryInnovationDe;
 	questions[4]["categoryId"] = categoryInnovationId;
+    questions[4]["rank"] = 5;
 
 	questions[5] = new Array();
 	questions[5]["language"] = langDe;
 	questions[5]["description"] = "Wir haben alle Einfluss auf endgültige Entscheidungen im Team.";
 	questions[5]["category"] = categorySecurityDe;
 	questions[5]["categoryId"] = categorySecurityId;
+    questions[5]["rank"] = 6;
 
 	questions[6] = new Array();
 	questions[6]["language"] = langDe;
 	questions[6]["description"] = "Wir informieren uns gegenseitig über arbeitsrelevante Dinge.";
 	questions[6]["category"] = categorySecurityDe;
 	questions[6]["categoryId"] = categorySecurityId;
+    questions[6]["rank"] = 7;
 
 	questions[7] = new Array();
 	questions[7]["language"] = langDe;
 	questions[7]["description"] = "In unserem Team herrscht ein Gefühl von Sicherheit und Vertrauen.";
 	questions[7]["category"] = categorySecurityDe;
 	questions[7]["categoryId"] = categorySecurityId;
+    questions[7]["rank"] = 8;
 
 	questions[8] = new Array();
 	questions[8]["language"] = langDe;
 	questions[8]["description"] = "Wir sind jederzeit aufgeschlossen gegenüber neuen Ideen.";
 	questions[8]["category"] = categoryInnovationDe;
 	questions[8]["categoryId"] = categoryInnovationId;
+    questions[8]["rank"] = 9;
 
 	questions[9] = new Array();
 	questions[9]["language"] = langDe;
 	questions[9]["description"] = "Wir stimmen über unsere Ziele überein.";
 	questions[9]["category"] = categoryVisionDe;
 	questions[9]["categoryId"] = categoryVisionId;
+    questions[9]["rank"] = 10;
 
 	questions[10] = new Array();
 	questions[10]["language"] = langDe;
 	questions[10]["description"] = "Wir können offen über Fehler sprechen.";
 	questions[10]["category"] = categoryTaskorientationDe;
 	questions[10]["categoryId"] = categoryTaskorientationId;
+    questions[10]["rank"] = 11;
 
 	questions[11] = new Array();
 	questions[11]["language"] = langDe;
 	questions[11]["description"] = "Alle Teammitglieder fühlen sich den Zielen des Teams verpflichtet.";
 	questions[11]["category"] = categoryVisionDe;
 	questions[11]["categoryId"] = categoryVisionId;
+    questions[11]["rank"] = 12;
 
 	questions[12] = new Array();
 	questions[12]["language"] = langDe;
 	questions[12]["description"] = "Es herrscht bei uns eine Atmosphäre, in der konstruktive Kritik geübt wird.";
 	questions[12]["category"] = categoryTaskorientationDe;
 	questions[12]["categoryId"] = categoryTaskorientationId;
+    questions[12]["rank"] = 13;
 
 	questions[13] = new Array();
 	questions[13]["language"] = langDe;
 	questions[13]["description"] = "Wir unterstützen einander in Ideen über neue und verbesserte Arbeitsprozesse.";
 	questions[13]["category"] = categoryInnovationDe;
 	questions[13]["categoryId"] = categoryInnovationId;
+    questions[13]["rank"] = 14;
 
 	questions[14] = new Array();
 	questions[14]["language"] = langDe;
 	questions[14]["description"] = "Wir unterstützen uns gegenseitig bei der Erledigung unserer Aufgabe.";
 	questions[14]["category"] = categoryTaskorientationDe;
 	questions[14]["categoryId"] = categoryTaskorientationId;
+    questions[14]["rank"] = 15;
 
 	questions[15] = new Array();
 	questions[15]["language"] = langDe;
 	questions[15]["description"] = "Jeder im Team trägt zur Entscheidungsfindung bei.";
 	questions[15]["category"] = categorySecurityDe;
 	questions[15]["categoryId"] = categorySecurityId;
+    questions[15]["rank"] = 16;
 
 	questions[16] = new Array();
 	questions[16]["language"] = langDe;
 	questions[16]["description"] = "Wir haben gemeinsam Team- und Kommunikationsregeln vereinbart und evaluieren diese regelmässig.";
 	questions[16]["category"] = categoryStructureDe;
 	questions[16]["categoryId"] = categoryStructureId;
+    questions[16]["rank"] = 17;
 
 	questions[17] = new Array();
 	questions[17]["language"] = langDe;
 	questions[17]["description"] = "Wir verfügen durchgängig über die richtigen Werkzeuge für effektive Zusammenarbeit.";
 	questions[17]["category"] = categoryStructureDe;
 	questions[17]["categoryId"] = categoryStructureId;
+    questions[17]["rank"] = 18;
 
 	questions[18] = new Array();
 	questions[18]["language"] = langDe;
 	questions[18]["description"] = "Alle im Team können die Kooperationswerkzeuge für unterschiedliche Situationen passend anwenden.";
 	questions[18]["category"] = categoryVirtualCompetenceDe;
 	questions[18]["categoryId"] = categoryVirtualCompetenceId;
+    questions[18]["rank"] = 19;
 
 	questions[19] = new Array();
 	questions[19]["language"] = langDe;
 	questions[19]["description"] = "Unsere Teambesprechungen finden regelmäßig statt und werden sorgfältig vorbereitet. Inhalte, Ziele und Ablauf sind klar.";
 	questions[19]["category"] = categoryStructureDe;
 	questions[19]["categoryId"] = categoryStructureId;
+    questions[19]["rank"] = 20;
 
 	questions[20] = new Array();
 	questions[20]["language"] = langDe;
 	questions[20]["description"] = "In unserem Team werden die vereinbarten Kommunikationskanäle effizient eingesetzt.";
 	questions[20]["category"] = categoryVirtualCompetenceDe;
 	questions[20]["categoryId"] = categoryVirtualCompetenceId;
+    questions[20]["rank"] = 21;
 
 	questions[21] = new Array();
 	questions[21]["language"] = langDe;
 	questions[21]["description"] = "In unserem Team besteht eine angemessene Balance zwischen Selbstorganisation und Führung.";
 	questions[21]["category"] = categoryVirtualCompetenceDe;
 	questions[21]["categoryId"] = categoryVirtualCompetenceId;
+    questions[21]["rank"] = 22;
 
 	questions[22] = new Array();
 	questions[22]["language"] = langDe;
 	questions[22]["description"] = "Wir haben eine klare Verteilung von Rollen, Aufgaben und Verantwortlichkeiten im Team. ";
 	questions[22]["category"] = categoryStructureDe;
 	questions[22]["categoryId"] = categoryStructureId;
+    questions[22]["rank"] = 23;
 
 	questions[23] = new Array();
 	questions[23]["language"] = langDe;
 	questions[23]["description"] = "Es gibt regelmäßig informelle Kontakte zwischen allen Teammitgliedern.";
 	questions[23]["category"] = categoryVirtualCompetenceDe;
 	questions[23]["categoryId"] = categoryVirtualCompetenceId;
+    questions[23]["rank"] = 24;
 
 	return questions;
 }
